@@ -19,4 +19,7 @@ void Intro(){
     cout << "║                                                            ║" << endl;
     cout << "╚════════════════════════════════════════════════════════════╝" << endl;
     cout << endl;
+    Util::waitForKeyFlushText("              >> PRESS ANY KEY TO GAME START <<");
+    std::system("cls");
+    
 }

@@ -127,7 +127,6 @@ void printMainMenu(Dungen& dungen, Inventory<Item>& inventory, AlchemyWorkshop& 
 	}
 }
 
-
 int main()
 {
 	
@@ -161,7 +160,6 @@ int main()
 		}
 		else break;
 	} 
-	//hp mp설정
 	while (true)
 	{
 		std::cout << "현재 공격력과 방어력을 설정해주세요(max 10 10):";
@@ -178,7 +176,7 @@ int main()
 		}
 		else break;
 	} 
-	//atk def 설정
+	std::system("cls");
 	std::cout << std::endl;
 	Player* player = nullptr;
 	player = new Novice(name, studs[0], studs[1], studs[2], studs[3]);
@@ -246,106 +244,6 @@ int main()
 	std::cout << std::endl;
 
 	printMainMenu(dungen, inventory, workshop, player);
-	
-
-	/*cout << endl; 
-	cout << endl;
-	cout << "던전 입장!" << endl;
-	cout << "." << endl;
-	cout << "." << endl;
-	cout << "탐색중" << endl;
-	cout << "." << endl;
-	cout << "." << endl;
-	cout << "!" << endl;
-	cout << endl;
-	cout << "몬스터가 나타났다!" << endl;
-	Monster* monster = new Slim("슬라임", 30, 20, 10, 5);
-
-	cout << "[ 전투 시작! ] " <<player->getName() << " vs " << monster->getName() << endl;
-	cout << "--- 플레이어 턴---" << endl;
-	cout << "1. 공격한다  2. 아이템 사용  3. 도망간다" << endl;
-	cout << "선택: "; 
-	
-	while (player->getHp() > 0 && monster->getHp() > 0)
-	{
-		choice = 0;
-		cin >> choice;		
-
-		if (cin.fail()) {
-			cin.clear();			
-			cin.ignore(numeric_limits<streamsize>::max(), '\n');
-			cout << "잘못된 입력입니다. 다시 입력해주세요: ";
-			cin >> choice;
-			continue;
-		}
-		switch (choice)
-		{
-			case 1:
-				player->attack(monster);
-				if (monster->getHp() <= 0) {
-					break;
-				}
-				monster->attack(player);
-				break;
-			case 2:
-				break;
-			case 3:
-				break;
-			default:
-				cout << "잘못된 입력입니다. 다시 입력해주세요: ";
-				break;
-		}		
-	}
-	
-	if(player->getHp() <= 0) {
-		cout << "플레이어가 패배했습니다." << endl;
-		cout << endl;
-		cout << "다시 도전 하시겠습니까?" << endl;
-		cout << "1. 예  2. 아니오" << endl;
-		bool isRetrySelect = false;
-		while (!isRetrySelect)
-		{
-			cout << "선택: ";
-			cin >> choice;
-			if (cin.fail()) {
-				cin.clear();
-				cin.ignore(numeric_limits<streamsize>::max(), '\n');
-				cout << "잘못된 입력입니다. 다시 입력해주세요: ";
-				cin >> choice;
-				continue;
-			}
-			switch (choice)
-			{
-			case 1:
-				main();
-				isRetrySelect = true;
-				break;
-			case 2:
-				cout << "게임을 종료합니다." << endl;
-				isRetrySelect = true;
-				return 0;
-				break;
-			default:
-				cout << "잘못된 입력입니다." << endl;
-				break;
-			}
-		}
-	}
-	else if(monster->getHp() <= 0) {
-		cout << "몬스터를 처치했습니다." << endl;
-		cout << endl;
-		cout << endl;
-		cout << "★ 전투 승리!" << endl;
-		cout << "-> 슬라임의 끈적한 젤리 획득!" << endl;
-		cout << "-> 인벤토리에 저장되었습니다." << endl;
-		Item slimeJelly = { "슬라임의 끈적한 젤리", 10 };
-		inventory.inventory_list.push_back(slimeJelly);
-		cout << endl;
-		printMainMenu(dungen, inventory, workshop);
-		
-	}*/
-
-	
 
 	delete player;
 }          

@@ -25,4 +25,32 @@ public:
         std::cout << "\n[ 아무 키를 누르면 계속합니다... ]" << std::endl;
         (void)_getch();
     }
+    static void waitForKeyAndText(const std::string& message) {
+        for (char c : message) {
+            std::cout << c << std::flush;
+        }
+        
+        (void)_getch();
+    }
+    static void waitForKeyFlushText(const std::string& message)
+    {
+        bool visible = true;
+        while (!_kbhit())
+        {
+            std::cout << "\r";
+            if (visible)
+            {
+                std::cout << message;
+            }
+            else
+            {
+                std::cout << std::string(message.size(), ' ');
+            }
+            std::cout << std::flush;
+            visible = !visible;
+            wait(400);
+        }
+        _getch();
+        std::cout << std::endl;
+    }
 };
