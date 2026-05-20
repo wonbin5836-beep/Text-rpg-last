@@ -1,4 +1,5 @@
 #include "common.h"
+#include "Intro.h"
 #include "Player.h"
 #include "Dungen.h"
 #include "Monster.h"
@@ -129,6 +130,7 @@ void printMainMenu(Dungen& dungen, Inventory<Item>& inventory, AlchemyWorkshop& 
 
 int main()
 {
+	
 	const int inventory_size = 10;
 	const int SIZE = 4;
 	std::string name;
@@ -138,11 +140,8 @@ int main()
 	int studs[SIZE] = { 0 }; // HP, MP, atk, def 순서로 저장
 	int HPPotion = 0;
 	int MPPotion = 0;
-	std::cout << "";
 
-	std::cout << "================================================" << std::endl;
-	std::cout << "              [던전 탈출 텍스트 RPG]" << std::endl;
-	std::cout << "================================================" << std::endl;
+	Intro();
 	std::cout << "주인공의 이름을 입력하세요:" << name;
 	std::cin >> name;
 	std::cout << std::endl;
